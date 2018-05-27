@@ -19,6 +19,12 @@ page-beer-home {
         text-align: center;
         background: transparent;
     }
+    .toolbar-content{
+        text-align: center;
+    }
+    ion-buttons,.headerClass{
+        display: inline;
+    }
     .appHeaderIcon{
         font-size: 2em;
         color: gold;
@@ -43,6 +49,11 @@ page-beer-home {
 
     .beerCardCol{
         padding: 0px;
+    }
+
+    .filterRow{
+        padding: 0px;
+        color: #F9F9FA;
     }
 
     .filterType{

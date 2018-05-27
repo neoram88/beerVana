@@ -15,36 +15,26 @@
 
 
 <ion-content class="contentClass">
-  <!-- <ion-row>
-    <ion-col>
-        <ion-card class="filterCard" (click)="toggleSort()">
-          <ion-row>
-            <ion-col col-8>
-                <div class="filterHeading">
-                  % Alcohol
-                </div>
-                <span class="filterType">
-                    {{sortOrder}}
-                </span> 
-            </ion-col>
-            <ion-col col-4>
-                <button large ion-button clear color="danger">
-                  <ion-icon size="large" name='md-funnel'></ion-icon>
-                </button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-    </ion-col>
-    <ion-col>
-        <ion-card class="filterCard">
-          Filtey By Style
-        </ion-card>
-    </ion-col>
-  </ion-row> -->
   <ion-searchbar placeholder="Search by Name" [(ngModel)]="beerSearchText" autocomplete="on">
   </ion-searchbar>
+  <ion-row class="filterRow">
+    <ion-col>
+        <button ion-button icon-right color="light" outline (click)="openSortFilter($event)">
+            Sort
+            <ion-icon name="md-funnel"></ion-icon>
+        </button>
+    </ion-col>
+    <ion-col>
+        <button ion-button icon-right color="light" outline (click)="chooseBeerTypes()">
+          Filter By Type
+          <ion-icon name="md-arrow-down"></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
   <ion-row >
-    <ion-col class="beerCardCol" col-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of beersList | search : {itemProperty:'name', searchString:beerSearchText}">
+    <ion-col class="beerCardCol" col-12 col-md-6 col-lg-4 col-xl-3 
+    *ngFor="let item of beersList | search : {itemProperty:'name', searchString:beerSearchText} | 
+    sort: {property: 'abv', order: order} | search:{itemProperty:'style', searchString:selectedBeerTypes}">
         <ion-card >
             <ion-card-header>
                 {{item.name}}
@@ -58,6 +48,10 @@
                 <p *ngIf="item.ounces">Ounces:
                     <span *ngIf="item.ounces">{{item.ounces}}</span>
                     <span *ngIf="!item.ounces">N/A</span>
+                </p>
+                <p>Alcohol Content: 
+                    <span *ngIf="item.abv">{{item.abv}}</span>
+                    <span *ngIf="!item.abv">N/A</span>
                 </p>
             </ion-card-content>
         </ion-card>

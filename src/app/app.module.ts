@@ -12,10 +12,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceProvider } from '../providers/service/service';
 import { BeerDataProvider } from '../providers/beer-data/beer-data';
+import {SortPopoverPage} from '../pages/beer-home/beer-home';
+import {ModelFilterPage} from '../pages/beer-home/beer-home';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    SortPopoverPage,
+    ModelFilterPage
   ],
   imports: [
     HttpClientModule,
@@ -25,7 +29,9 @@ import { BeerDataProvider } from '../providers/beer-data/beer-data';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    SortPopoverPage,
+    ModelFilterPage
   ],
   providers: [
     StatusBar,
