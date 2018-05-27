@@ -1,0 +1,73 @@
+page-beer-home {
+
+    // @media only screen and (max-width: 420px) {
+    //     .beerCardCol{
+    //         width: 100%;
+    //     }
+    // }
+    // url("../../assets/imgs/backgroundIMG.jpg"),
+    $backgroundColor:linear-gradient(to right top, #02060c, #071121, #0e1734, #1e1944, #361751);
+
+    .scroll-content{
+        padding: 10px;
+    }
+    .contentClass{
+        background: $backgroundColor;
+    }
+    .toolbar-background,.headerClass .toolbar-title{
+        color: #F9F9FA!important;
+        text-align: center;
+        background: transparent;
+    }
+    .appHeaderIcon{
+        font-size: 2em;
+        color: gold;
+    }
+    .filterCard{
+        min-width:20%;
+        height: 5em;
+        border-radius: 10px;
+        color: #5727AD;
+        font-size: 3rem;
+        text-align: center;
+        background-color: #F9F9FA;
+    }
+
+    .searchbar .searchbar-input{
+        height: 5em;
+    }
+
+    .searchbar .searchbar-search-icon{
+        top: 2em;
+    }
+
+    .beerCardCol{
+        padding: 0px;
+    }
+
+    .filterType{
+        font-size: 1.3rem;
+        float: left;
+    }
+
+    .filterCard{
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .filterCard > .row{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .filterCard > .col{
+        padding: 0px;
+        margin: 0px;
+        padding-left: 1rem;
+    }
+
+    .filterHeading{
+        font-size: 2rem;
+    }
+
+}

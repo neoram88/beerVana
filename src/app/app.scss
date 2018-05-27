@@ -1,5 +1,9 @@
 // http://ionicframework.com/docs/theming/
 
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 // App Global Sass
 // --------------------------------------------------
