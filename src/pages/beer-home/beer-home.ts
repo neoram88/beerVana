@@ -20,7 +20,7 @@ import { PopoverController } from 'ionic-angular';
 export class BeerHomePage {
 
   private beersList;
-  private beerSearchText;
+  private beerSearchText="";
   private beerTypes=[];
   private selectedBeerTypes=[];
   order: number;

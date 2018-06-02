@@ -14,14 +14,18 @@ export class SearchPipe implements PipeTransform {
     if(!items) return [];
     if(!params.searchString) return items;
     var sortedArray=[];
-    if(_.isArray(params.searchString)){
-      if(params.searchString.length==0) return items;
-      params.searchString.map(searchStr=>{
-        sortedArray.push(items.filter( it => {
-          return it[params.itemProperty].toLowerCase().includes(searchStr);
-        }));
-      })
-      return sortedArray;
+    let searchRes=[];
+    if(params.itemProperty=='style'){
+      if(params.searchString.length==0){
+        searchRes=items;
+      }else{
+        params.searchString.map((searchStr)=>{
+          searchRes=searchRes.concat(items.filter( it => {
+            return it[params.itemProperty].toLowerCase().includes(searchStr.toLowerCase());
+          }));
+        })
+      }
+      return searchRes;
     }else{
       params.searchString = params.searchString.toLowerCase();
       return items.filter( it => {
